@@ -1,0 +1,132 @@
+\documentclass[10pt,a4paper,withhyper]{altacv}
+
+% ---------------- Page layout ----------------
+\geometry{left=1.5cm,right=1.5cm,top=1.6cm,bottom=1.4cm,columnsep=1.2cm}
+\usepackage{paracol}
+\columnratio{0.7}
+
+% ---------------- Шрифты и переносы -------------
+\iftutex
+  \setmainfont{Inter}
+  \setsansfont{Inter}
+  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{russian}
+  \setotherlanguage{english}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T2A]{fontenc}
+  \usepackage[russian,english]{babel}
+  \IfFileExists{cm-super.sty}{\usepackage{cm-super}}{}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% ---------------- Цвета --------
+\definecolor{Ink}{HTML}{1C2833}
+\definecolor{SoftInk}{HTML}{3E5060}
+\definecolor{Sand}{HTML}{D6C9A8}
+
+\colorlet{name}{Ink}
+\colorlet{tagline}{SoftInk}
+\colorlet{heading}{Ink}
+\colorlet{headingrule}{Sand}
+\colorlet{subheading}{Ink}
+\colorlet{accent}{Ink}
+\colorlet{emphasis}{SoftInk}
+\colorlet{body}{SoftInk}
+
+% ---------------- Заголовки --------------------
+\renewcommand{\namefont}{\Huge\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\Large\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% ---------------- Маркеры ----------------------
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
+% ==================================================
+%                      DOCUMENT
+% ==================================================
+\begin{document}
+
+% ---------- Header ----------
+\name{Смирнов Максим Сергеевич}
+\tagline{Бакалавр «Компьютерные науки и анализ данных», НИУ ВШЭ}
+\NewInfoField{telegram}{\faTelegramPlane}[https://t.me/]
+
+\personalinfo{
+  \email{smmaximss@gmail.com}
+  \phone{+7 921 562‑33‑35}
+  \location{Санкт‑Петербург, Россия}
+  \github{Dimodic}
+  \telegram{dimodic}
+}
+
+\makecvheader
+
+% ---------- Two–column layout ----------
+\begin{paracol}{2}
+
+% ===== LEFT COLUMN =================================
+\cvsection{Опыт}
+
+\cvevent{Летняя практика}{Учебный центр «Вороново», НИУ ВШЭ}{3–6 июля 2025}{Москва}
+\begin{itemize}
+  \item Решал прикладные задачи в студенческой команде под наставничеством преподавателей.
+  \item Участвовал в воркшопах по разработке, данным и инженерному мышлению.
+\end{itemize}
+
+\divider
+
+\cvevent{Pet‑проекты \& фриланс}{Самостоятельно}{2024 – н.в.}{Remote}
+\begin{itemize}
+  \item Разрабатываю микросервисы на \textbf{FastAPI}/\textbf{Streamlit}; деплой в Docker.
+  \item Автоматизировал отчётность курса C++ через \textbf{Google Sheets API} + \textbf{Yandex.Contest}.
+  \item Прокачиваю алгоритмические навыки на \textbf{LeetCode} (C++).
+\end{itemize}
+
+% ---------------------------------------------------
+\cvsection{Проекты}
+
+\cvevent{Google Sheets Updater}{Pet‑project}{2024}{}
+\begin{itemize}
+  \item Планировщик на Python, который подтягивает результаты соревнований из Yandex.Contest и обновляет таблицы Google Sheets.
+  \item Стек: \textbf{Python}, Pandas, NumPy, Google Sheets API, Docker.
+\end{itemize}
+
+% ---------------------------------------------------
+\cvsection{Образование}
+
+\cvevent{Бакалавриат КНАД}{ФКН, НИУ ВШЭ}{2025 – 2029 (ожидается)}{Москва}
+\begin{itemize}
+  \item GPA: \textbf{7.31 / 10} · \#13 из 5713 из 57.
+  \item 39 зачтённых кредитов (май 2025).
+\end{itemize}
+
+% ===== RIGHT COLUMN ================================
+\switchcolumn
+
+\cvsection{Обо мне}
+\begin{quote}
+«Осваиваю новое быстро и довожу задачи до результата. Люблю чистый код и ясную логику; задаю вопросы, если что‑то неочевидно.»
+\end{quote}
+
+% ---------------------------------------------------
+\cvsection{Навыки}
+\smallskip % чуть плотнее
+\cvtag{Python}\cvtag{C++}\cvtag{FastAPI}\cvtag{Streamlit}\cvtag{Docker}\cvtag{Git}\\
+\cvtag{Linux}\cvtag{CI/CD}\cvtag{Google Sheets API}\cvtag{Algorithms}
+
+% ---------------------------------------------------
+\cvsection{Сильные стороны}
+\cvtag{Быстрое обучение}\cvtag{Внимательность}\cvtag{Ответственность}\\
+\cvtag{Командная работа}\cvtag{Самоорганизация}
+
+% ---------------------------------------------------
+\cvsection{Интересы}
+\cvtag{Алгоритмы}\cvtag{Backend}\cvtag{Data Science}\cvtag{DevOps}
+
+\end{paracol}
+\end{document}
